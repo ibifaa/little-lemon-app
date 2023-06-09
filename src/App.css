@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
+
+*{
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.layout{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas: 'header'
+                        'main'
+                        'footer';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* .main{
+  display: grid;
+  height: 150vh;
+  grid-template-rows:auto 1fr auto;
+  margin: 0;
+  padding: 0;
+}  */
+
+.header, .nav,.main,.footer {
+  width: 100%;
+}
+.header{
+   background-color: #EDEFEE;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.nav{
+  background-color: #EE9972;
+  color: #EDEFEE;
+}
+
+.footer{
+  background-color: #EE9972;
+}
+
+
+.header-class{
+  background-color: #EDEFEE;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.image-section li a{
+  text-decoration: none;
+ 
+}
+
+li{
+   list-style: none;
+   margin-left: 10px;
+}
+
+
+.nav-items{
+  justify-content: space-between;
+  height: 40px;
+  
+}
+.padding{
+  padding-right: 180px;
+  padding-left: 180px;
+ }
+
+.brandName{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.image-section{
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+.flex{
+  display: flex;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+}
+
+
+
+.HomePage{
+  padding-top: 50px;
+  display: flex;
+  background-color: #333333;
+  height: 400px;
+} 
+
+.homeImg{
+  width: 350px;
+  height: 350px;
+  border-radius:20px
+  border 5px solid white;
+  box-shadow: 10px 10px white;
+}
+
+.text-section{
+  width: 50%;
+}
+
+.image-section{
+  width: 50%;
+}
+
+.title{
+  font-size: 64px;
+  font-family: Markazi;
+  margin: 0;
+  padding: 0;
+  color: #F4CE14;
+}
+.subTitle{
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+ 
+}
+
+.white-txt{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.black-txt{
+  color:black
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.homeBtn{
+  font-size: 18px;
+  padding: 7px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+
+.icon{
+  width: 40px;
+  height: 40px;
+}
+
+.food-img{
+  width: 150px;
+  height: 150px;
+}
+
+@media screen and (max-width:700px) {
+  .nav{
+    height: 0;
+    display: none;
+    overflow: hidden;
   }
-  to {
-    transform: rotate(360deg);
-  }
+  
 }
