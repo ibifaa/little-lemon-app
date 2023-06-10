@@ -10,11 +10,11 @@ function MainPage() {
     <React.Fragment>
     <div className='layout'>
 
-      <div className='header'>
+      <div className='header light'>
         <Header />
       </div>
       
-      <div className='nav'>
+      <div className='nav lightPink'>
         <Nav />
       </div>
        
@@ -22,7 +22,7 @@ function MainPage() {
        <Main />
       </div>
 
-      <div className='footer'>
+      <div className='footer light'>
         <Footer/>
       </div>
 

@@ -2,10 +2,9 @@
  const Nav = () =>{
 
     return(
-        <div className="nav-items padding">
-            <ul className="image-section ">
-                <li className = " link brandName"> <a href="#">Little Lemon</a> </li>
-                <li  className="link  "> <a href="#">HomePage</a></li>
+        <div className="padding">
+            <ul className="link-section flex ">
+                <li  className="link "> <a href="#">Home</a></li>
                 <li  className = "link "> <a href="#">About</a> </li>
                 <li className = "link "> <a href="#">Menu</a> </li>
                 <li  className = "link "> <a href="#">Reservation</a> </li>

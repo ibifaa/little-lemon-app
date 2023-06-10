@@ -7,10 +7,10 @@ import About from './About';
 function Main() {
   return (
     <div>
-      <Home />
-      <Specials />
-      <Testimonials />
-      <About />
+    <div className='home darkBrown'> <Home /></div>
+    <div className='specials pink'> <Specials /> </div>
+    <div className='testimonials darkBrown'>   <Testimonials /> </div>
+    <div className='about'> <About /> </div>
     </div>
   )
 }
