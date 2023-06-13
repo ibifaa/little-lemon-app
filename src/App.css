@@ -3,6 +3,9 @@
   padding: 0;
   margin: 0;
 }
+body{
+  font-family: 'Karla';
+}
 
 .layout{
   width: 100%;
@@ -17,10 +20,20 @@
 .header, .nav, .main, .footer {
   width: 100%;
 }
+h1{
+  font-family: 'Markazi';
+  font-size: 64px;
+}
+
+h3{
+  font-size: 40px;
+  margin: 10px;
+  color: #F4CE14;
+}
 
 p{
   font-size: 16px;
-  line: height 1.5em;
+  line-height: 1.5em;
 }
 
 h5{
@@ -44,7 +57,7 @@ h5{
   text-align: center;
 }
 
-.brand-section{
+.brandSection{
   text-align: center;
 }
 
@@ -55,8 +68,8 @@ nav{
   padding: 0;
 }
 
-ul li{
-  list-style: none;
+link{
+ 
    margin: 15px;
 }
 
@@ -70,7 +83,11 @@ a{
 }
 
 .link-section{
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 /* Home Section */
@@ -243,13 +260,48 @@ a{
    cursor: pointer;
 }
 
+/* About Section */
 .about{
   height: 500px;
   background-color:#EE9972;
+  padding-top: 40px;
 }
+
+.about-title{
+  color:#F4CE14;
+  text-shadow:5px 3px 5px #333333;
+  
+}
+
+/* Footer Section */
 
 .footer{
   height: 80px;
+  padding: 20px;
+}
+
+.footer-section{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo-section{
+  text-align: center;
+}
+.footer-logo{
+  height: 40px;
+  width: 40px;
+}
+
+.logo-txt{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+a:hover{
+  font-size: 18px;
+  font-weight: bold;
+  color:#F4CE14;
 }
 /* Helper Classes */
 
@@ -273,6 +325,11 @@ a{
   padding-right: 10%;
 }
 
+/* BookingForm */
+.bookingForm{
+  height: 500px;
+  background-color: #495E57;
+}
 /* Colors */
 .darkPink{
   background-color: #EE9972;

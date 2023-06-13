@@ -5,7 +5,7 @@ import image3 from '../Assets/images/image3.jpg';
 
 function Specials() {
   return (
-    <div className='specials padding'>
+    <div id='specials' className='specials padding'>
       <div className='flex heading'>
         <h3 className='special-heading'> SPECIALS</h3>
         <button className='homeBtn darkBrown darkBg'> Online Menu</button>

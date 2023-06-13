@@ -1,9 +1,9 @@
 import React from 'react';
-import homeImg from '../Assets/images/homeImg.jpg'
+import logo from '../Assets/images/logo.png'
 
 function About() {
   return (
-    <div className='about-section flex padding'>
+    <div id='about' className='about-section flex padding'>
       <div className='text-section'>
           <h1 className='about-title'>Little Lemon</h1>
           <h3 className='about-subTitle white-txt'>Chicago</h3>
@@ -17,7 +17,7 @@ function About() {
           <button className='homeBtn'>Reserve a Table</button>
       </div>
       <div className='image-section'>
-        <img src={homeImg} className="homeImg" alt="Home" />
+        <img src={logo} className="aboutImg" alt="about" />
       </div>
     </div>
   )

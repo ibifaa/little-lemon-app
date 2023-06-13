@@ -3,6 +3,7 @@ import Home from  './Home';
 import Specials from './Specials';
 import Testimonials from './Testimonials';
 import About from './About';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function Main() {
   return (

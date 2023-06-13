@@ -49,7 +49,7 @@ function Testimonials() {
 
  
       return (
-      <div className='testimonial-section center'>
+      <div id='testimonials' className='testimonial-section center'>
         <p  className='comment'>{myTestimonials[currentIndex].txt}</p>
         <h5  className='name'>{myTestimonials[currentIndex].name} </h5>
         <img className="programmers" src={myTestimonials[currentIndex].image.url} alt={myTestimonials[currentIndex].name}/>
