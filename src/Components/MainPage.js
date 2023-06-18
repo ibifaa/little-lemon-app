@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import Header from './Header';
 import Nav from './Nav';
 import Footer from './Footer';
@@ -9,9 +9,18 @@ import About from './About';
 import Home from './Home';
 import Specials from './Specials';
 import BookingForm from './BookingForm';
+import ConfirmedBookingPage from './ConfirmedBookingPage';
+
 
 
 function MainPage() {
+  const [avaliableTimes, setAvailableTimes] = useState({
+    resDate: "",
+    resTime: "",
+    guest: "",
+    occasion: ""
+  });
+
   return (
     <Router>
       <div className='header light'>
@@ -30,7 +39,8 @@ function MainPage() {
                 <Route path='testimonials' element={<Testimonials />} />
                 <Route path='/about' element={<About />} />
               </Route>
-              <Route path='/bookingForm' element={<BookingForm />} />
+              <Route path='/bookingForm' element={<BookingForm avaliableTimes={avaliableTimes}  setAvailableTimes={setAvailableTimes}/>} />
+              <Route path='/confirmedBookingPage' element={<ConfirmedBookingPage />} />
             </Routes>
           </div>
 
