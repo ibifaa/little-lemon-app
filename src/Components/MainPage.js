@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, createContext, useReducer, useEffect, useContext } from 'react'
 import Header from './Header';
 import Nav from './Nav';
 import Footer from './Footer';
@@ -11,16 +11,7 @@ import Specials from './Specials';
 import BookingForm from './BookingForm';
 import ConfirmedBookingPage from './ConfirmedBookingPage';
 
-
-
 function MainPage() {
-  const [avaliableTimes, setAvailableTimes] = useState({
-    resDate: "",
-    resTime: "",
-    guest: "",
-    occasion: ""
-  });
-
   return (
     <Router>
       <div className='header light'>
@@ -30,28 +21,33 @@ function MainPage() {
         <Nav />
       </div>
       <React.Fragment>
-        <div className='layout'>
-          <div className='main'>
-            <Routes>
-              <Route path='/' element={<Main />}>
-                <Route path='/home' element={<Home />} />
-                <Route path='/specials' element={<Specials />} />
-                <Route path='testimonials' element={<Testimonials />} />
-                <Route path='/about' element={<About />} />
-              </Route>
-              <Route path='/bookingForm' element={<BookingForm avaliableTimes={avaliableTimes}  setAvailableTimes={setAvailableTimes}/>} />
-              <Route path='/confirmedBookingPage' element={<ConfirmedBookingPage />} />
-            </Routes>
-          </div>
+       
+          <div className='layout'>
+            <div className='main'>
+              <Routes>
+                <Route path='/' element={<Main />}>
+                  <Route path='/home' element={<Home />} />
+                  <Route path='/specials' element={<Specials />} />
+                  <Route path='testimonials' element={<Testimonials />} />
+                  <Route path='/about' element={<About />} />
+                </Route>
+                <Route path='/bookingForm' element={<BookingForm />} />
+                <Route path='/confirmedBookingPage' element={<ConfirmedBookingPage />} />
+              </Routes>
+            </div>
 
-          <div className='footer light padding'>
-            <Footer />
-          </div>
+            <div className='footer light padding'>
+              <Footer />
+            </div>
 
-        </div>
+          </div>
+      
 
       </React.Fragment>
+
+
     </Router>
+
   )
 }
 

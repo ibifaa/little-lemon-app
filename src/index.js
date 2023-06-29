@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AvailableTimesContext } from './Components/MyContext';
+import { MyContext } from './Components/MyContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <MyContext >
+      <App />
+    </MyContext>
   </React.StrictMode>
 );
 
