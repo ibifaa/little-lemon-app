@@ -17,18 +17,34 @@ function BookingForm() {
   const [guest, setGuest] = useState(0);
   const [occasion, setOccasion] = useState();
 
+  const fetchAPI = (date) => {
+    fetch("https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js")
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setResDate(data)
+      })
+  }
+
   useEffect(() => {
-    const newTimes = calculateAvailableTimes(resDate);
-    dispatch({ type: 'SET_AVAILABLE_TIMES', payload: newTimes })
-  }, [resDate, dispatch])
+    const fetchAvailableTimes = async () => {
+      try {
+        const response = await fetchAPI(resDate);
+        dispatch({ type: 'SET_AVAILABLE_TIMES', payload: response });
+      } catch (error) {
+        console.log('Error fetching available times:', error)
+      }
+    };
+    fetchAvailableTimes();
+  }, [resDate, dispatch]);
+
+
 
   const handleDateChange = (e) => {
-    setResDate(e.target.value)
-  }
+    setResDate(e.target.value);
+  };
 
-  const calculateAvailableTimes = (selectedDate) => {
-    return availableTimes
-  }
 
   const [isFormVissible, setIsFormVissible] = useState(true);
 

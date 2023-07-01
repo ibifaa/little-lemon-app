@@ -1,20 +1,35 @@
 import React from 'react'
 import { useReducer, createContext } from 'react';
 
-
-
-function updateTimes(state, action) {
+const availableTimesReducer = (state, action) => {
     switch (action.type) {
         case 'SET_AVAILABLE_TIMES':
             return action.payload;
         default:
             return state;
     }
+};
 
-}
+const updateTimes = async (selectedDate, fetchData, dispatch) => {
+    try {
+        const response = await fetchData(selectedDate);
+        dispatch({ type: 'SET_AVAILABLE_TIMES', payload: response })
+    } catch (error) {
+        console.log('Error updating available times:', error);
+    }
+};
 
-const initializeTimes = () => {
-    return ['10:00 AM', '12:00 PM', '02:00 PM', '04:00 PM'];
+const initializeTimes = async (fetchData) => {
+    try {
+        const today = new Date().toISOString().slice(0, 10);
+        const response = await fetchData(today);
+
+        const availableTimes = response || [];
+
+        return availableTimes;
+    } catch (error) {
+
+    }
 };
 
 const AvailableTimesContext = createContext();
@@ -29,4 +44,4 @@ function MyContext({ children }) {
 }
 
 export default MyContext
-export  { AvailableTimesContext }
+export { AvailableTimesContext }
