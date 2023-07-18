@@ -6,11 +6,8 @@ function ConfirmedBookingPage(props) {
 
     return (
         <div>
-            <h1>Booking is Successfull</h1>
-            <p>Date: {props.resDate}</p>
-            <p>Time: {props.resTime}</p>
-            <p>Number of Guest: {props.guest}</p>
-            <p> Occasion: {props.occasion}</p>
+            <h3>Booking is Successful</h3>
+            <h1>Your form has been submitted successfully</h1>
         </div>
     )
 }

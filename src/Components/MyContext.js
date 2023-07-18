@@ -9,8 +9,6 @@ const updateTimes =  (date) => {
 
 const output = fetchAPI(new Date());
 
-
-
 const AvailableTimesContext = createContext();
 
 function MyContext({ children }) {

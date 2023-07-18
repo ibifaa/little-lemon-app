@@ -327,7 +327,7 @@ a:hover{
 
 /* BookingForm */
 .bookingForm{
-  height: 500px;
+  padding: 20px;
   background-color: #495E57;
 }
 /* Colors */
@@ -336,6 +336,10 @@ a:hover{
 }
 .lightPink{ 
   background-color: #FBDABB;
+}
+
+.input-error{
+  border: red;
 }
 
 .darkBlue{
@@ -378,6 +382,10 @@ a:hover{
     overflow: hidden;
   }
   
+}
+
+input.input-error{
+  border-color:  red;
 }
 
 

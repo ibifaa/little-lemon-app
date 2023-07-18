@@ -1,67 +1,98 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext} from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import ConfirmedBookingPage from './ConfirmedBookingPage';
 import { AvailableTimesContext } from './MyContext';
+// import { basicSchema } from '../schemas';
+// import MyContext from './MyContext';
 
-
-
-function BookingForm() {
-  const { availableTimes, dispatch } = useContext(AvailableTimesContext);
-  const [resDate, setResDate] = useState('')
- 
-  const [resTime, setResTime] = useState('')
-
-  const [guest, setGuest] = useState(0);
-  const [occasion, setOccasion] = useState();
+const  BookingForm = () => {
+  const {availableTimes, updateTimes } = useContext(AvailableTimesContext);
+  
+  
+  const [name , setName] = useState("")
+  const [email , setEmail] = useState("")
+  const [telephone , setTelephone] = useState("")
+  const [guest, setGuest] = useState("")
+  const [resDate, setResDate] = useState("")
+  const [occasion , setOccasion] = useState("")
 
   
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    setIsFormVisible(false);
+
+  }
+
+  const [resTime, setResTime] = useState(
+    availableTimes.map((times) => <option> {times}</option>)
+  );
 
   const handleDateChange = (e) => {
     setResDate(e.target.value);
+
+    var stringify = e.target.value;
+    const resDate = new Date(stringify);
+
+    updateTimes(resDate);
+
+    setResTime(availableTimes.map((times) => <option>{times}</option>));
   };
 
-
-  const [isFormVissible, setIsFormVissible] = useState(true);
-
+  const [isFormVisible, setIsFormVisible] = useState(true);
+  
   const inputFileRef = useRef();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsFormVissible(false);
-  }
-
 
 
   const [goToConfirmedBooking, setGoToConfirmedBooking] = useState(false)
   if (goToConfirmedBooking) {
-    return <Navigate to="/confirmedBookingPage" />
+    <Navigate to="/confirmedBookingPage" />
   }
+
 
   return (
     <>
-      {isFormVissible ? (
+      {isFormVisible ? (
         <div className='bookingForm' >
           <form onSubmit={handleSubmit} style={{ display: "grid", maxWidth: "200px", gap: "20px" }} action="" method="post">
             <h1>Reserve a Table</h1>
 
-            <label htmlFor="resDate">Choose date:</label>
-            <input type="date" name="resDate" id="date" onChange={handleDateChange} />
-            <label htmlFor="resTime">Choose Time</label>
+            <label htmlFor="name">Name:</label>
+            <input 
+            value={name} 
+            id="name" 
+            placeholder='Enter your name'
+            onChange={(e) => setName(e.target.value)}
+          />
 
-            <select value={resTime} onChange={(e) => setResTime(e.target.value)}>
-              <option value=""> Select a time </option>
-              {availableTimes.map((availableTime, index) =>
-                <option key={index} value={availableTime}>
-                  {availableTime}
-                </option>)}
+            <label htmlFor="email">Email:</label>
+            <input type="email" value={email} 
+            name="email" id="email"  onChange={(e) => setEmail(e.target.value)}
+            />
+            
+            <label htmlFor="telephone">Phone:</label>
+            <input type="phone" value={telephone} 
+            name="phone" id="telephone"  onChange={(e) => setTelephone(e.target.value)}
+            />
 
-            </select>
+            <label htmlFor="resDate">Choose a date:</label>
+            <input type="date" value={resDate} name="resDate" id="resDate" 
+            onChange={handleDateChange}/>
+            
+            <label htmlFor="resTime">Choose a Time</label>
+            <select id='resTime' required>
+             {resTime}
+             </select>
+
             <label htmlFor="guest">Number of guests</label>
-            <input type="number" name='guest' placeholder='1' min="1" max="10" id='guests' onChange={(e) => setGuest(e.target.value)} />
-
-            <select id="occasion" name='occasion' onChange={(e) => setOccasion(e.target.value)}>
+            <input type="number" value={guest} name='guest' placeholder='1' 
+            min="1" max="10" id='guests' onChange= {(e) => setGuest(e.target.value)}  
+            required />
+            
+            <label htmlFor="occasion">Occasion type</label>   
+            <select id="occasion" name='occasion' 
+            onChange={(e) => setOccasion(e.target.value)} required>
               <option>None</option>
               <option>Anniversary</option>
               <option>Wedding</option>
@@ -70,15 +101,14 @@ function BookingForm() {
               <option>Other</option>
             </select>
             <input type="submit" value="Make your Reservation" />
-          </form>
-        </div >
-      ) : (
-        <ConfirmedBookingPage guest={guest} occasion={occasion} resTime={resTime} resDate={resDate} />
-      )
+          </form>       
+          </div >
+        ) : (
+          <ConfirmedBookingPage />
+        )
       }
-    </>
-
+    </>      
   )
-};
+ }
 
 export default BookingForm
