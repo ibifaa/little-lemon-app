@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import ConfirmedBookingPage from './ConfirmedBookingPage';
 import { AvailableTimesContext } from './MyContext';
+import image4 from '../Assets/images/image4.jpg';
 // import { basicSchema } from '../schemas';
 // import MyContext from './MyContext';
 
@@ -53,44 +54,31 @@ const  BookingForm = () => {
 
   return (
     <>
-      {isFormVisible ? (
-        <div className='bookingForm' >
-          <form onSubmit={handleSubmit} style={{ display: "grid", maxWidth: "200px", gap: "20px" }} action="" method="post">
-            <h1>Reserve a Table</h1>
-
-            <label htmlFor="name">Name:</label>
-            <input 
-            value={name} 
-            id="name" 
-            placeholder='Enter your name'
-            onChange={(e) => setName(e.target.value)}
-          />
-
-            <label htmlFor="email">Email:</label>
-            <input type="email" value={email} 
-            name="email" id="email"  onChange={(e) => setEmail(e.target.value)}
-            />
-            
-            <label htmlFor="telephone">Phone:</label>
-            <input type="phone" value={telephone} 
-            name="phone" id="telephone"  onChange={(e) => setTelephone(e.target.value)}
-            />
-
-            <label htmlFor="resDate">Choose a date:</label>
+     {isFormVisible ? (
+    <div className='formContainer light'>
+    <div className='bookingForm flex' >
+    <div className='image-section'>
+        <img src={image4} className="formImg" alt="form image"/>
+      </div>
+     
+        <div>
+          <form className='form-section' onSubmit={handleSubmit} style={{ display: "grid", maxWidth: "200px", gap: "20px" }} action="" method="post">
+          <h4> Information for Reservation</h4>
+            <label htmlFor="resDate" className='label'>Choose a date:</label>
             <input type="date" value={resDate} name="resDate" id="resDate" 
             onChange={handleDateChange}/>
             
-            <label htmlFor="resTime">Choose a Time</label>
+            <label htmlFor="resTime" className='label'>Choose a Time</label>
             <select id='resTime' required>
              {resTime}
              </select>
 
-            <label htmlFor="guest">Number of guests</label>
+            <label htmlFor="guest" className='label'>Number of guests</label>
             <input type="number" value={guest} name='guest' placeholder='1' 
             min="1" max="10" id='guests' onChange= {(e) => setGuest(e.target.value)}  
             required />
             
-            <label htmlFor="occasion">Occasion type</label>   
+            <label htmlFor="occasion" className='label'> Occasion type</label>   
             <select id="occasion" name='occasion' 
             onChange={(e) => setOccasion(e.target.value)} required>
               <option>None</option>
@@ -102,12 +90,15 @@ const  BookingForm = () => {
             </select>
             <input type="submit" value="Make your Reservation" />
           </form>       
-          </div >
-        ) : (
-          <ConfirmedBookingPage />
-        )
-      }
-    </>      
+          </div>
+        
+    </div>      
+    </div>
+    ) : (
+      <ConfirmedBookingPage />
+    )
+  }
+    </>
   )
  }
 

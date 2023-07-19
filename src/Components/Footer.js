@@ -15,7 +15,6 @@ function Footer() {
                     <h4>Contact use</h4>
                     <p>Lorem ipsum dolor sit <br />
                     amet consectetur <br />
-                    adipisicing elit. 
                     </p>
                 </div>
 

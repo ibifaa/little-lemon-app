@@ -49,7 +49,7 @@ h5{
 
 .header{
   padding: 10px;
-  height: 40px;
+  height: 2cqmax;
  
 }
 
@@ -59,6 +59,10 @@ h5{
 
 .brandSection{
   text-align: center;
+}
+
+.headerClass{
+  justify-content: space-between;
 }
 
 /* Nav Section */
@@ -78,12 +82,10 @@ a{
   color: black;
 }
 
-.header-class{
-  justify-content: space-between;
-}
+
 
 .link-section{
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 60%;
   margin: 0 auto;
@@ -103,9 +105,6 @@ a{
   padding-bottom: 50px;
 }
 
-.text-section{
-  
-}
 
 .image-section{
   padding-bottom: 20px;
@@ -145,7 +144,7 @@ a{
   margin-top: 20px;
 } 
 
-.homeImg{
+.homeImg, .formImg{
   width: 350px;
   height: 420px;
   border: 10px solid white;
@@ -276,8 +275,8 @@ a{
 /* Footer Section */
 
 .footer{
-  height: 80px;
-  padding: 20px;
+  height: 50px;
+  padding: 10px;
 }
 
 .footer-section{
@@ -289,13 +288,12 @@ a{
   text-align: center;
 }
 .footer-logo{
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
 }
 
 .logo-txt{
   font-size: 20px;
-  font-weight: bold;
 }
 
 a:hover{
@@ -328,7 +326,7 @@ a:hover{
 /* BookingForm */
 .bookingForm{
   padding: 20px;
-  background-color: #495E57;
+  background-color: #cec2c2;
 }
 /* Colors */
 .darkPink{
@@ -396,11 +394,58 @@ input.input-error{
    padding-bottom: 10px;
 } */
 
+/* Form Section */
 
+input{
+  padding: 10px;
+}
 
+.label{
+  margin-bottom: 0;
+  display: block;
+}
 
+.bookingForm{
+  justify-content: center;
+  align-items: center;
+  
+}
 
+.formImg{
+  border: 5px solid white;
+  box-shadow: none;
+  margin: 20px;
+  height: 450px;
+  
+}
 
+.form-section{
+  padding: 20px;
+  display: flex;
+  width: 50%;
+  margin: 20px;
+  padding: 20px;
+}
+
+.formContainer{
+  /* width: 80%; */
+}
+
+/* Confirmed Section */
+.confirmationPage{
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.checkedSvg {
+  width: 30%;
+}
+
+.confirmed-txt{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
 
 

@@ -15,7 +15,6 @@ function Header() {
 
         <div className='brandSection'>
           <img src={logo} alt="logo" className='logo' />
-          <h4 className='brand'>Little Lemon</h4>
         </div>
 
         <div>
