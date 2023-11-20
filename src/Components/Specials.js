@@ -5,10 +5,10 @@ import image3 from '../Assets/images/image3.jpg';
 
 function Specials() {
   return (
-    <div id='specials' className='specials padding'>
-      <div className='flex heading'>
-        <h3 className='special-heading'> SPECIALS</h3>
-        <button className='homeBtn darkBrown darkBg'> Online Menu</button>
+    <div id='specials' className='specials'>
+      <div className='special-heading flex'>
+        <h3 className='special-title'> SPECIALS</h3>
+        <button className='specialBtn darkBrown darkBg'> Online Menu</button>
       </div>
 
     <div className='card-section flex'>

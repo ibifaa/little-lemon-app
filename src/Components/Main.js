@@ -8,10 +8,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 function Main() {
   return (
     <div>
-    <div className='home darkBrown'> <Home /></div>
-    <div className='specials pink'> <Specials /> </div>
-    <div className='testimonials darkBrown'>   <Testimonials /> </div>
-    <div className='about'> <About /> </div>
+    <section className=''> <Home /></section>
+    <section className=''> <Specials /> </section>
+    <section className=''>   <Testimonials /> </section>
+    <section className=''> <About /> </section>
     </div>
   )
 }

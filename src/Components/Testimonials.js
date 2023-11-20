@@ -50,12 +50,14 @@ function Testimonials() {
  
       return (
       <div id='testimonials' className='testimonial-section center'>
+        <div className='testimonial-content'>
         <p  className='comment'>{myTestimonials[currentIndex].txt}</p>
         <h5  className='name'>{myTestimonials[currentIndex].name} </h5>
         <img className="programmers" src={myTestimonials[currentIndex].image.url} alt={myTestimonials[currentIndex].name}/>
         <div  className="buttons">
         <button className='next btn ' onClick={nextSlide} > {nextSymbol} </button>
         <button className='prev btn ' onClick={prevSlide} > {prevSymbol} </button>
+        </div>
         </div>
 
         </div>

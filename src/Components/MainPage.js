@@ -1,6 +1,6 @@
 import React, { Fragment, useState, createContext, useReducer, useEffect, useContext } from 'react'
 import Header from './Header';
-import Nav from './Nav';
+// import Nav from './Nav';
 import Footer from './Footer';
 import Main from './Main';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -13,17 +13,14 @@ import ConfirmedBookingPage from './ConfirmedBookingPage';
 
 function MainPage() {
   return (
-    <Router>
-      <div className='header light'>
+    <Router className="container">
+      <header >
         <Header />
-      </div>
-      <div className='nav lightPink'>
-        <Nav />
-      </div>
+      </header>
+      
       <React.Fragment>
        
-          <div className='layout'>
-            <div className='main'>
+          <main>
               <Routes>
                 <Route path='/' element={<Main />}>
                   <Route path='/home' element={<Home />} />
@@ -34,13 +31,11 @@ function MainPage() {
                 <Route path='/bookingForm' element={<BookingForm />} />
                 <Route path='/confirmedBookingPage' element={<ConfirmedBookingPage />} />
               </Routes>
-            </div>
+          </main>
 
-            <div className='footer light padding'>
+          <footer className='footer'>
               <Footer />
-            </div>
-
-          </div>
+          </footer>
       
 
       </React.Fragment>

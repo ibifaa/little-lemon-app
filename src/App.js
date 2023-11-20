@@ -5,9 +5,9 @@ import './App.css';
 
 function App() {
   return (
-    <React.Fragment>
+    <div >
            <MainPage />
-    </React.Fragment>
+    </div>
   )
 }
 

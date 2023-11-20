@@ -3,7 +3,7 @@ import { HashLink as Link } from "react-router-hash-link";
 
 const Nav = () => {
     return (
-        <div className="padding">
+        <div>
             <div className="link-section flex">
                 <Link to="/home" className="link "> Home</Link>
                 <Link to="#about" className="link "> About </Link>
