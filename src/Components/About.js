@@ -16,6 +16,7 @@ function About() {
           </p>
           <button className='homeBtn'>Reserve a Table</button>
       </div>
+      
       <div className='image-section'>
         <img src={logo} className="aboutImg" alt="about" />
       </div>
