@@ -53,17 +53,17 @@ const  BookingForm = () => {
 
 
   return (
-    <>
+    <div className='form-section'>
      {isFormVisible ? (
-    <div className='formContainer light'>
+    <div className='formContainer '>
     <div className='bookingForm flex' >
     <div className='image-section'>
         <img src={image4} className="formImg" alt="form image"/>
       </div>
      
         <div>
-          <form className='form-section' onSubmit={handleSubmit} style={{ display: "grid", maxWidth: "200px", gap: "20px" }} action="" method="post">
-          <h4> Information for Reservation</h4>
+          <form  onSubmit={handleSubmit} style={{ display: "grid", maxWidth: "200px", gap: "20px" }} action="" method="post">
+          <h4 className='table'> Reservation a Table</h4>
             <label htmlFor="resDate" className='label'>Choose a date:</label>
             <input type="date" value={resDate} name="resDate" id="resDate" 
             onChange={handleDateChange}/>
@@ -88,7 +88,7 @@ const  BookingForm = () => {
               <option>Birthday</option>
               <option>Other</option>
             </select>
-            <input type="submit" value="Make your Reservation" />
+            <input className='button' type="submit" value="Reserve" />
           </form>       
           </div>
         
@@ -98,7 +98,7 @@ const  BookingForm = () => {
       <ConfirmedBookingPage />
     )
   }
-    </>
+    </div>
   )
  }
 

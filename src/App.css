@@ -55,6 +55,7 @@ h5{
   position: fixed;
   /* height: 44px; */
   align-items: center;
+  z-index: 99;
 }
 
 .brandSection{
@@ -230,7 +231,7 @@ main{
 .specials{
   /* height:620px; */
   background-color:white;
-  padding: 5%;
+  padding: 5% 7%;
   width: 100%;
   margin: 40px auto;
 }
@@ -246,11 +247,12 @@ main{
   border-radius: 10px;
   margin-bottom: 40px;
 }
+
 .card{
   width: 100%;
   border-radius: 15px;
   /* padding: 10% ; */
-  box-shadow: 2px 2px 10px rgb(68, 66, 66);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-image{
@@ -262,7 +264,7 @@ main{
 .card-section{
   justify-content: space-between;
   padding: 5%;
-  gap: 30px;
+  gap: 40px;
  }
 
 .heading{
@@ -311,9 +313,7 @@ main{
 }
 /* Testimonial Section */
 .testimonial-section{
-  /* height: 500px; */
-  
-  padding: 40px;
+  padding: 10% 7%;
   background-color: #333333;
   margin: auto;
 }
@@ -324,13 +324,28 @@ main{
 }
 
 .comment{
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
   color:#EDEFEE;
   width: 100%;
-  margin: 30px auto;
+  /* margin: 30px auto; */
+  height: 150px;
+  /* background-color: red; */
 
+}
+
+@media screen and (max-width:600px) {
+  .comment{
+    font-size: 0.9rem;
+    font-weight: 400;
+    height: 200px;
+  
+  }
+
+  .testimonial-content{
+    width: 90%; 
+  }
 }
 
 .name{
@@ -350,7 +365,7 @@ main{
   align-items: center;
 }
 .btn{
-  bottom: 50%;
+  bottom: 10%;
   position: relative;
   width: 50px;
   height: 50px;
@@ -377,14 +392,14 @@ main{
 .about-section{
   /* height: 500px; */
   background-color:white;
-  padding: 10%;
+  padding: 7% 7%;
   color: white;
   width: 100%;
 }
 
 .about-title{
   color: black;
-  text-shadow:5px 3px 5px #333333;
+  text-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
 }
 
@@ -393,6 +408,7 @@ main{
 }
 .about-txt{
   color: black;
+  font-size: 1.2rem;
 }
 
 .aboutImg{
@@ -428,7 +444,7 @@ footer .footer-section{
   place-self:top;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 5% 7%;
+  padding: 2% 7%;
   gap: 20%;
 }
 
@@ -439,6 +455,10 @@ footer .footer-section{
 .footer-logo{
   height: 30px;
   width: 30px;
+}
+
+.controls ul li{
+  list-style: none;
 }
 
 
@@ -467,37 +487,7 @@ a:hover{
 .contact p{
   font-size: 0.7rem;
 }
-  /* footer .footer-section{
-    grid-template-columns: repeat(2, 1fr);
-     font-size: 0.5rem; 
-  }
-
-  .footer-logo-section{
-    font-size: 0.7rem;
-    align-items: center;
-  }
-
-  .controls{
-   
-    grid-column: 1/-1;
-   
-
-  }
-
-  .footer-controls{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-  }
-
-  .controls ul li {
-   list-style: none;
-
-  }  */
-
-  
-}
-
+ }
 /* Helper Classes */
 
 .center{
@@ -521,9 +511,60 @@ a:hover{
 }
 
 /* BookingForm */
+.form-section{
+  padding: 10%;
+  width: 100%;
+  background-color: #525151;
+  margin: auto;
+}
+ 
+
 .bookingForm{
+   padding: 5%;
   padding: 20px;
-  background-color: #cec2c2;
+  background-size: contain;
+}
+
+input{
+  padding: 10px;
+}
+
+.label{
+  margin-bottom: 0;
+  display: block;
+}
+
+.bookingForm{
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  
+}
+
+select{
+  padding: 10px;
+}
+
+.button{
+  border-radius: 10px;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+}
+
+@media screen and (max-width:600px) {
+  .bookingForm{
+flex-direction:column;
+  
+}
+}
+
+.formImg{
+  border: 5px solid white;
+  box-shadow: none;
+  margin: 20px;
+  height: 450px;
+  
 }
 /* Colors */
 .darkPink{
@@ -550,15 +591,6 @@ a:hover{
 }
 
 
-/* Image resizing */
-
-
-
-
-
-
-
-
 
 @media screen and (max-width:700px) {
   .nav{
@@ -569,53 +601,19 @@ a:hover{
   
 }
 
-input.input-error{
+.input-error{
   border-color:  red;
 }
 
 
 
-/* .header{
-   background-color: #EDEFEE;
-   height: 30px;
-   padding-bottom: 10px;
-} */
-
-/* Form Section */
-
-input{
-  padding: 10px;
-}
-
-.label{
-  margin-bottom: 0;
-  display: block;
-}
-
-.bookingForm{
-  justify-content: center;
-  align-items: center;
-  
-}
-
-.formImg{
-  border: 5px solid white;
-  box-shadow: none;
-  margin: 20px;
-  height: 450px;
-  
-}
-
-.form-section{
-  padding: 20px;
-  display: flex;
-  width: 50%;
-  margin: 20px;
-  padding: 20px;
-}
 
 .formContainer{
   /* width: 80%; */
+}
+
+.table{
+  font-size: 1.5rem;
 }
 
 /* Confirmed Section */

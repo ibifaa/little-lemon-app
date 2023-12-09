@@ -3,7 +3,7 @@ import logo from '../Assets/images/logo.png'
 
 function About() {
   return (
-    <div id='about' className='about-section flex padding'>
+    <div id='about' className='about-section flex'>
       <div className='text-section'>
           <h1 className='about-title'>Little Lemon</h1>
           <h3 className='about-subTitle'>Chicago</h3>
